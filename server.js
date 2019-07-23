@@ -3,11 +3,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
-
+// const patients  = require ('./app/routes/patient_routes')
 // require route files
 const exampleRoutes = require('./app/routes/example_routes')
 const userRoutes = require('./app/routes/user_routes')
-
+const patientRoutes = require ('./app/routes/patient_routes')
 // require error handling middleware
 const errorHandler = require('./lib/error_handler')
 
@@ -50,7 +50,7 @@ const port = process.env.PORT || expressPort
 app.use(tokenOrBearer)
 
 // register passport authentication middleware
-app.use(auth)
+app.use(auth) ,
 
 // add `bodyParser` middleware which will parse JSON requests into
 // JS objects before they reach the route files.
@@ -65,7 +65,7 @@ app.use(requestLogger)
 // register route files
 app.use(exampleRoutes)
 app.use(userRoutes)
-
+app.use (patientRoutes)
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
 // passed any error messages from them
