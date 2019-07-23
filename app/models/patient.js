@@ -1,41 +1,35 @@
 const mongoose = require('mongoose')
 
 const patientSchema = new mongoose.Schema({
-  patientName: {
+    patientName : {
     type: String,
     required: true
   },
-
-  medicalReport: {
+    age: {
     type: String,
     required: true
   },
-
-  age : {
-    type: Number,
-    required: true
-  },
-
-  image: {
-    type: String,
-    required: true
-  },
-
-  hospital: {
-    type: String,
-    required: true
-  },
-
   city : {
     type: String,
     required: true
   },
-
-  fileNumber :{
-    type : "string",
-    required:true
+  image: {
+    type: String,
+    required: true
   },
-
+  hospital: {
+    type: String,
+    required: true
+  },
+  fileNumber: {
+    type: Number,
+    required: true
+  },
+  medicalReport: {
+    type: String,
+    required: true
+  },
+  
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

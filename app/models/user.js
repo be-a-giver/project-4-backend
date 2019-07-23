@@ -7,21 +7,6 @@ const userSchema = new mongoose.Schema({
     unique: true
   },
 
-  name: {
-    type: String,
-    required: true
-  } ,
-
-  ID : {
-    type : String,
-    required: true
-  },
-
-   mobileNumber : {
-     type: String,
-     required: true
-   }, 
-   
   hashedPassword: {
     type: String,
     required: true
@@ -40,7 +25,6 @@ const userSchema = new mongoose.Schema({
 
 userSchema.virtual('patients', {
   ref: 'Patient',
-  localField: '_id',
   foreignField: 'owner'
 });
 
