@@ -1,15 +1,19 @@
 const mongoose = require('mongoose')
 
 const patientSchema = new mongoose.Schema({
-    Patient : {
+    patientName : {
     type: String,
     required: true
   },
-  medicalReport: {
+    age: {
     type: String,
     required: true
   },
-  Image: {
+  city : {
+    type: String,
+    required: true
+  },
+  image: {
     type: String,
     required: true
   },
@@ -17,13 +21,12 @@ const patientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  
-  city : {
-    type: String,
+  fileNumber: {
+    type: Number,
     required: true
   },
-  numberFile: {
-    type: Number,
+  medicalReport: {
+    type: String,
     required: true
   },
   

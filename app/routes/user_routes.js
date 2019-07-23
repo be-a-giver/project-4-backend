@@ -45,9 +45,10 @@ router.post('/sign-up', (req, res, next) => {
       // return necessary params to create a user
       return {
         email: req.body.credentials.email,
-        name: req.body.credentials.name,
-        ID: req.body.credentials.ID,
-        mobileNumber:req.body.credentials.mobileNumber,
+        name: req.body.credentials.name ,
+        ID   :req.body.credentials.ID ,
+        mobileNumber : req.body.credentials.  mobileNumber ,
+
         hashedPassword: hash
       }
     })

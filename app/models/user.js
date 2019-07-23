@@ -6,18 +6,25 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  name:{
-    type : String,
-    required: true 
+  name : {
+    type: String,
+    required: true
+    
   },
   ID: {
     type: String,
     required: true
+    
   },
-  mobileNumber:{
+
+ 
+  mobileNumber: {
     type: Number,
-    required:true
+    required: true
+    
   },
+
+
   hashedPassword: {
     type: String,
     required: true
