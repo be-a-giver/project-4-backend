@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 // const patients  = require ('./app/routes/patient_routes')
 // require route files
-const patientRoutes = require('./app/routes/patient_routes')
+
 const userRoutes = require('./app/routes/user_routes')
 const patientRoutes = require ('./app/routes/patient_routes')
 // require error handling middleware

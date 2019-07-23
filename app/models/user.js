@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.virtual('patients', {
   ref: 'Patient',
+  localField:'_id',
   foreignField: 'owner'
 });
 
