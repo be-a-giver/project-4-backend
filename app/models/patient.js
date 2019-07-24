@@ -6,7 +6,7 @@ const patientSchema = new mongoose.Schema({
     required: true
   },
     age: {
-    type: String,
+    type: Number,
     required: true
   },
   city : {
@@ -29,7 +29,6 @@ const patientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',

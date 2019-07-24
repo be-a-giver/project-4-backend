@@ -6,31 +6,29 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  name : {
-    type: String,
-    required: true
-    
-  },
-  ID: {
-    type: String,
-    required: true
-    
-  },
 
- 
-  mobileNumber: {
-    type: Number,
+   name: {
+      type: String,
     required: true
-    
-  },
+   },
 
+   ID : {
+     type: String,
+     required: true,
+   },
 
-  hashedPassword: {
+    mobileNumber: {
+       type: String,
+     required: true,
+    },
+
+   hashedPassword: {
     type: String,
     required: true
   },
+
   token: String
-}, {
+  }, {
   timestamps: true,
   toObject: {
     // remove `hashedPassword` field when we call `.toObject`
@@ -43,7 +41,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.virtual('patients', {
   ref: 'Patient',
-  localField: '_id',
+  localField:'_id',
   foreignField: 'owner'
 });
 

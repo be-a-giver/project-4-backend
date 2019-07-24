@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 // const patients  = require ('./app/routes/patient_routes')
 // require route files
-const exampleRoutes = require('./app/routes/example_routes')
+
 const userRoutes = require('./app/routes/user_routes')
 const patientRoutes = require ('./app/routes/patient_routes')
 // require error handling middleware
@@ -44,6 +44,8 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://localhost:${reactPor
 // define port for API to run on
 const port = process.env.PORT || expressPort
 
+
+
 // this middleware makes it so the client can use the Rails convention
 // of `Authorization: Token <token>` OR the Express convention of
 // `Authorization: Bearer <token>`
@@ -63,7 +65,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
-app.use(exampleRoutes)
+// app.use(exampleRoutes)
 app.use(userRoutes)
 app.use (patientRoutes)
 // register error handling middleware
@@ -78,3 +80,17 @@ app.listen(port, () => {
 
 // needed for testing
 module.exports = app
+
+
+
+// {
+//   "patients":{
+//    "patientName" : "Nora" ,
+//    " medicalReport" : "https://images.sampletemplates.com/wp-content/uploads/2017/03/03222311/Medical-Legal-Report-Example.jpg" ,
+//    "age" : 22 ,
+//    "image" : "http://www.bestshowerchairs.com/wp-content/uploads/2017/08/bedridden-patient-care.jpg" ,
+//    "hospital" : "hospital"
+   
+//   }
+// }
+
