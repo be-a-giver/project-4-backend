@@ -7,12 +7,28 @@ const userSchema = new mongoose.Schema({
     unique: true
   },
 
-  hashedPassword: {
+   name: {
+      type: String,
+    required: true
+   },
+
+   ID : {
+     type: String,
+     required: true,
+   },
+
+    mobileNumber: {
+       type: String,
+     required: true,
+    },
+
+   hashedPassword: {
     type: String,
     required: true
   },
+
   token: String
-}, {
+  }, {
   timestamps: true,
   toObject: {
     // remove `hashedPassword` field when we call `.toObject`

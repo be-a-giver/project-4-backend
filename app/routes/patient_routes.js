@@ -46,7 +46,7 @@ router.post('/patients', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /Patients/5a7db6c74d55bc51bdf39793
-   router.patch('/patients/:id', requireToken, removeBlanks, (req, res, next) => {
+   router.put('/patients/:id', requireToken, removeBlanks, (req, res, next) => {
    delete req.body.patient.owner
    Patient.findById(req.params.id)
     .then(handle404)
@@ -54,7 +54,7 @@ router.post('/patients', requireToken, (req, res, next) => {
       requireOwnership(req, patient)
       return patient.update(req.body.patient)
 
-    }).then(() => res.status(204)
+    }).then(() => res.sendStatus(204)
     
     ).catch(next)
 })
