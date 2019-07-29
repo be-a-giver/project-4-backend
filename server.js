@@ -3,11 +3,13 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+
 // const patients  = require ('./app/routes/patient_routes')
 // require route files
 
 const userRoutes = require('./app/routes/user_routes')
 const patientRoutes = require ('./app/routes/patient_routes')
+const helperRoutes= require ('./app/routes/helper_routes')
 // require error handling middleware
 const errorHandler = require('./lib/error_handler')
 
@@ -68,6 +70,7 @@ app.use(requestLogger)
 // app.use(exampleRoutes)
 app.use(userRoutes)
 app.use (patientRoutes)
+app.use (helperRoutes)
 // register error handling middleware
 // note that this comes after the route middlewares, because it needs to be
 // passed any error messages from them
